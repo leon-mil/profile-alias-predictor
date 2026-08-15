@@ -1,0 +1,266 @@
+@'
+# =============================================================================
+# ProfileAliasPredictor - Git Ignore Rules
+# =============================================================================
+# Repository:
+#   profile-alias-predictor
+#
+# Purpose:
+#   Exclude generated build output, IDE state, caches, logs, temporary files,
+#   test artifacts, local configuration, and operating-system metadata.
+#
+# Important project files such as .cs, .csproj, .slnx, .code-workspace,
+# README.md, documentation, and source-controlled configuration are NOT ignored.
+# =============================================================================
+
+
+# -----------------------------------------------------------------------------
+# .NET Build Output
+# -----------------------------------------------------------------------------
+
+[Bb]in/
+[Oo]bj/
+[Aa]rtifacts/
+artifacts/
+
+# Compiled binaries and symbols
+*.dll
+*.exe
+*.pdb
+*.mdb
+
+# Generated runtime/build files
+*.deps.json
+*.runtimeconfig.json
+*.runtimeconfig.dev.json
+
+
+# -----------------------------------------------------------------------------
+# Visual Studio
+# -----------------------------------------------------------------------------
+
+.vs/
+
+# Per-user Visual Studio files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.rsuser
+*.csproj.user
+
+# Visual Studio generated database/project files
+*.VC.db
+*.VC.VC.opendb
+*.opendb
+*.sdf
+
+
+# -----------------------------------------------------------------------------
+# Visual Studio Code
+# -----------------------------------------------------------------------------
+
+# Local VS Code settings/extensions state.
+# The project .code-workspace file remains tracked.
+.vscode/
+
+.history/
+
+
+# -----------------------------------------------------------------------------
+# JetBrains Rider / ReSharper
+# -----------------------------------------------------------------------------
+
+.idea/
+_ReSharper*/
+*.DotSettings.user
+*.sln.iml
+
+
+# -----------------------------------------------------------------------------
+# NuGet
+# -----------------------------------------------------------------------------
+
+packages/
+
+*.nupkg
+*.snupkg
+
+# NuGet temporary/cache files
+*.nuget.targets
+*.nuget.props
+
+
+# -----------------------------------------------------------------------------
+# Test Results and Code Coverage
+# -----------------------------------------------------------------------------
+
+TestResults/
+test-results/
+coverage/
+coverage-results/
+
+*.trx
+*.coverage
+*.coveragexml
+*.coverlet.json
+
+coverage.json
+coverage.xml
+coverage.cobertura.xml
+lcov.info
+
+
+# -----------------------------------------------------------------------------
+# Benchmark Output
+# -----------------------------------------------------------------------------
+
+BenchmarkDotNet.Artifacts/
+
+
+# -----------------------------------------------------------------------------
+# Logs
+# -----------------------------------------------------------------------------
+
+*.log
+*.err
+*.out
+
+logs/
+Logs/
+
+
+# -----------------------------------------------------------------------------
+# Temporary Files
+# -----------------------------------------------------------------------------
+
+*.tmp
+*.temp
+*.cache
+*.swp
+*.swo
+*~
+
+~$*
+*.orig
+*.rej
+
+
+# -----------------------------------------------------------------------------
+# Backup Files and Local Archives
+# -----------------------------------------------------------------------------
+
+*.bak
+*.backup
+*.old
+
+Backups/
+backups/
+Archives/
+archives/
+
+*.zip
+*.7z
+*.rar
+
+
+# -----------------------------------------------------------------------------
+# Local / Machine-Specific Configuration
+# -----------------------------------------------------------------------------
+
+.env
+.env.*
+!.env.example
+
+*.local
+*.local.json
+*.local.ps1
+*.local.psd1
+
+
+# -----------------------------------------------------------------------------
+# PowerShell Temporary / Analysis Files
+# -----------------------------------------------------------------------------
+
+PSScriptAnalyzerSettings.local.psd1
+
+# PowerShell transcript/log output
+PowerShell_transcript.*
+powershell_transcript.*
+
+
+# -----------------------------------------------------------------------------
+# Windows
+# -----------------------------------------------------------------------------
+
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+Desktop.ini
+
+$RECYCLE.BIN/
+
+
+# -----------------------------------------------------------------------------
+# macOS
+# -----------------------------------------------------------------------------
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+._*
+
+
+# -----------------------------------------------------------------------------
+# Linux / Unix
+# -----------------------------------------------------------------------------
+
+.directory
+
+# Editor backup files
+*~
+
+
+# -----------------------------------------------------------------------------
+# Miscellaneous IDE / Tool Caches
+# -----------------------------------------------------------------------------
+
+.cache/
+.temp/
+tmp/
+temp/
+
+*.pid
+*.pid.lock
+
+
+# -----------------------------------------------------------------------------
+# Generated Documentation Output
+# -----------------------------------------------------------------------------
+# Source Markdown under docs/ remains tracked.
+# Ignore generated documentation/build sites only.
+
+_site/
+docs/_site/
+docs/.jekyll-cache/
+
+
+# =============================================================================
+# Intentionally Tracked
+# =============================================================================
+#
+# The following are intentionally NOT ignored:
+#
+#   ProfileAliasPredictor.cs
+#   ProfileAliasPredictor.csproj
+#   ProfileAliasPredictor.slnx
+#   ProfileAliasPredictor.code-workspace
+#   README.md
+#   docs/
+#   .gitignore
+#
+# =============================================================================
+'@ | Set-Content -Path .\.gitignore -Encoding utf8
