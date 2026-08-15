@@ -301,6 +301,32 @@ public sealed class ProfileAliasPredictor : ICommandPredictor
         new(
             "unzip -Force",
             "Extract and allow existing destination files to be replaced"),
+        new(
+            "clear-dir",
+            "Clear the current directory while preserving the directory"),
+
+        new(
+            "clear-dir -WhatIf",
+            "Preview clearing the current directory without deleting anything"),
+
+        new(
+            "clear-dir \"C:\\Users\\mil00001\\Pictures\\Screenshots\"",
+            "Clear all contents from the Screenshots directory"),
+
+        new(
+            "clear-dir \"C:\\Users\\mil00001\\Pictures\\Screenshots\" -WhatIf",
+            "Preview clearing the Screenshots directory without deleting anything"),
+        new(
+            "clear-bin",
+            "Permanently empty the Windows Recycle Bin"),
+
+        new(
+            "clear-bin -WhatIf",
+            "Preview emptying the Windows Recycle Bin"),
+
+        new(
+            "clear-bin -Confirm",
+            "Empty the Windows Recycle Bin with confirmation"),
 
 
         // Local development
