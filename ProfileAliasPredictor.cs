@@ -403,7 +403,7 @@ public sealed class ProfileAliasPredictor : ICommandPredictor
             "plogs",
             @"Open V:\PROD\LOGS\SASLOGS"),
 
-        // Git
+        // Git                
         new(
             "gst",
             "Show the current Git branch and repository status"),
@@ -414,7 +414,19 @@ public sealed class ProfileAliasPredictor : ICommandPredictor
 
         new(
             "gfile",
-            "Show staged, unstaged, and untracked Git files")
+            "Show staged, unstaged, and untracked Git files"),
+
+        new(
+            "gitpullon",
+            "Enable automatic Git pull when entering repositories"),
+
+        new(
+            "gitpulloff",
+            "Disable automatic Git pull when entering repositories"),
+
+        new(
+            "gitpullstate",
+            "Display the current Git auto-pull status")
     ];
 
     private readonly Guid _id;
