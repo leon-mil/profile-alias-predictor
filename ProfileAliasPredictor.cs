@@ -77,70 +77,72 @@ public sealed class ProfileAliasPredictor : ICommandPredictor
 
 
         // CPRS client TEST deployment
+                // CPRS client TEST deployment
         new(
-            "cprs-test-deploy",
-            "Build CPRS, archive Current, and deploy to V:\\TEST\\EXE\\Current"),
+            "cprs-test-deploy -Message \"<message>\"",
+            @"Build CPRS, archive CPRS II, and deploy to V:\TEST\EXE\CPRS II"),
 
         new(
-            "cprs-test-deploy -SkipBuild",
-            "Use the existing Release build, archive Current, and replace Current"),
+            "cprs-test-deploy -SkipBuild -Message \"<message>\"",
+            @"Use the existing Release build and deploy to V:\TEST\EXE\CPRS II"),
 
         new(
-            "cprs-test-deploy -WhatIf",
-            "Preview a Current deployment without building or changing files"),
+            "cprs-test-deploy -Message \"<message>\" -WhatIf",
+            "Preview the TEST deployment without changing files"),
 
         new(
-            "cprs-test-deploy -SkipBuild -WhatIf",
-            "Preview deploying the existing Release build to Current"),
+            "cprs-test-deploy -SkipBuild -Message \"<message>\" -WhatIf",
+            "Preview deploying the existing Release build to TEST"),
 
         new(
-            "cprs-test-deploy -Folder <folder>",
-            "Build CPRS and replace V:\\TEST\\EXE\\<folder> without touching Current"),
+            "cprs-test-deploy -Folder <folder> -Message \"<message>\"",
+            @"Build CPRS and deploy to V:\TEST\EXE\<folder>"),
 
         new(
-            "cprs-test-deploy -Folder <folder> -SkipBuild",
-            "Use the existing Release build and replace V:\\TEST\\EXE\\<folder>"),
+            "cprs-test-deploy -Folder <folder> -SkipBuild -Message \"<message>\"",
+            @"Deploy the existing Release build to V:\TEST\EXE\<folder>"),
 
         new(
-            "cprs-test-deploy -Folder <folder> -WhatIf",
-            "Preview building and deploying CPRS to a custom TEST folder"),
+            "cprs-test-deploy -Folder <folder> -Message \"<message>\" -WhatIf",
+            "Preview deployment to a custom TEST folder"),
 
         new(
-            "cprs-test-deploy -Folder <folder> -SkipBuild -WhatIf",
-            "Preview deploying the existing Release build to a custom TEST folder"),
-        
+            "cprs-test-deploy -Folder <folder> -SkipBuild -Message \"<message>\" -WhatIf",
+            "Preview the existing Release build to a custom TEST folder"),
+
+
         // CPRS client production deployment
         new(
-            "cprs-prod-deploy",
-            @"Promote V:\TEST\EXE\Current to V:\PROD\EXE\CPRS II"),
+            "cprs-prod-deploy -Message \"<message>\"",
+            @"Promote V:\TEST\EXE\CPRS II to live V:\PROD\EXE\CPRS II"),
 
         new(
-            "cprs-prod-deploy -WhatIf",
-            @"Preview V:\TEST\EXE\Current -> V:\PROD\EXE\CPRS II"),
+            "cprs-prod-deploy -Message \"<message>\" -WhatIf",
+            @"Preview TEST CPRS II -> live PROD CPRS II"),
 
         new(
-            "cprs-prod-deploy -Source <folder>",
-            @"Promote V:\TEST\EXE\<folder> to V:\PROD\EXE\CPRS II"),
+            "cprs-prod-deploy -DestinationFolder <folder> -Message \"<message>\"",
+            @"Promote TEST CPRS II to V:\PROD\EXE\<folder> without modifying live CPRS II"),
 
         new(
-            "cprs-prod-deploy -Source <folder> -WhatIf",
-            @"Preview V:\TEST\EXE\<folder> -> V:\PROD\EXE\CPRS II"),
+            "cprs-prod-deploy -DestinationFolder <folder> -Message \"<message>\" -WhatIf",
+            @"Preview TEST CPRS II -> custom PROD folder"),
 
         new(
-            @"cprs-prod-deploy -Source V:\TEST\EXE\<folder>",
-            @"Promote a full TEST path to V:\PROD\EXE\CPRS II"),
+            "cprs-prod-deploy -Source <folder> -Message \"<message>\"",
+            @"Promote V:\TEST\EXE\<folder> to live PROD CPRS II"),
 
         new(
-            @"cprs-prod-deploy -Source V:\TEST\EXE\<folder> -WhatIf",
-            "Preview promotion from a full TEST path"),
+            "cprs-prod-deploy -Source <folder> -Message \"<message>\" -WhatIf",
+            "Preview promotion from a custom TEST folder to live PROD"),
 
         new(
-            "cprs-prod-deploy -Folder <folder>",
-            @"Promote V:\TEST\EXE\<folder>; -Folder is an alias for -Source"),
+            "cprs-prod-deploy -Source <folder> -DestinationFolder <folder> -Message \"<message>\"",
+            @"Promote a custom TEST folder to a custom PROD folder"),
 
         new(
-            "cprs-prod-deploy -Folder <folder> -WhatIf",
-            "Preview production promotion using the -Folder alias"),
+            "cprs-prod-deploy -Source <folder> -DestinationFolder <folder> -Message \"<message>\" -WhatIf",
+            "Preview custom TEST folder -> custom PROD folder"),
 
         new(
             "cprs-ce-deploy",
@@ -380,7 +382,7 @@ public sealed class ProfileAliasPredictor : ICommandPredictor
             "predrebuild -Force",
             "Stop PowerShell and rebuild ProfileAliasPredictor without confirmation"),
         new(
-            "predproj",
+            "epred",
             "Open the ProfileAliasPredictor project in Visual Studio Code"),
         new(
             "predinfo",
