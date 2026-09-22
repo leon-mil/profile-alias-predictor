@@ -411,18 +411,33 @@ public sealed class ProfileAliasPredictor : ICommandPredictor
                 new(
                     "gfile",
                     "Show staged, unstaged, and untracked Git files"),
+                new(
+                    "gcompare default origin/feature/<branch>",
+                    "Compare the repository default branch to a feature branch and stream changed files through VS Code"),
+
+                new(
+                    "gcompare default origin/feature/<branch> -NoDiff",
+                    "Show branch comparison statistics without opening file diffs"),
+
+                new(
+                    "gcompare origin/master origin/feature/<branch>",
+                    "Compare an explicit base branch to a feature branch"),
+
+                new(
+                    "gcompare origin/main origin/feature/<branch>",
+                    "Compare an explicit main branch to a feature branch"),
 
                 new(
                     "gitpullon",
-                    "Enable automatic Git pull when entering repositories"),
+                    "Enable automatic all-branch Git fetch/prune and fast-forward pull when entering repositories"),
 
                 new(
                     "gitpulloff",
-                    "Disable automatic Git pull when entering repositories"),
+                    "Disable automatic Git synchronization when entering repositories"),
 
                 new(
                     "gitpullstate",
-                    "Display the current Git auto-pull status")
+                    "Display the current Git auto-sync status")
             });
 
         return aliases.ToArray();
