@@ -437,8 +437,51 @@ public sealed class ProfileAliasPredictor : ICommandPredictor
 
                 new(
                     "gitpullstate",
-                    "Display the current Git auto-sync status")
-            });
+                    "Display the current Git auto-sync status"),
+
+
+                // =================================================================
+                // CPRS Git Activity Report
+                // =================================================================
+
+                new(
+                    "gitreport",
+                    "Generate a Git activity report across CPRS repositories"),
+
+                new(
+                    "gitreport -Days 7 -AllBranches -OpenReport",
+                    "Show Git activity from the last 7 days"),
+
+                new(
+                    "gitreport -Days 30 -AllBranches -OpenReport",
+                    "Show Git activity from the last 30 days"),
+
+                new(
+                    "gitreport -Days 90 -AllBranches -OpenReport",
+                    "Show Git activity from the last 90 days"),
+
+                new(
+                    "gitreport -Days 30 -AllBranches -Format Both -OpenReport",
+                    "Generate HTML and CSV Git activity reports"),
+
+                new(
+                    "gitreport -SortBy Repository -OpenReport",
+                    "Sort Git activity by repository"),
+
+                new(
+                    "gitreport -SortBy Author -OpenReport",
+                    "Sort Git activity by developer"),
+
+                new(
+                    "gitreport -SortBy Date -OpenReport",
+                    "Sort Git activity by commit date"),
+
+                new(
+                    "gitreport -Days 30 -AllBranches -PassThru",
+                    "Generate Git activity with structured output")
+
+                }
+            );
 
         return aliases.ToArray();
     }
