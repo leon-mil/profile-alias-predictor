@@ -411,6 +411,22 @@ public sealed class ProfileAliasPredictor : ICommandPredictor
                 new(
                     "gfile",
                     "Show staged, unstaged, and untracked Git files"),
+                                new(
+                    "branchfind <branch>",
+                    "Search for a branch across all CPRS repositories"),
+
+                new(
+                    "branchfind '<wildcard>'",
+                    "Search for branches across all CPRS repositories using a wildcard"),
+
+                new(
+                    "branchfind <branch> -Fetch",
+                    "Refresh origin and search for a branch across all CPRS repositories"),
+
+                new(
+                    "branchfind '*'",
+                    "List all local and origin branches across all CPRS repositories"),
+
                 new(
                     "gcompare default origin/feature/<branch>",
                     "Compare the repository default branch to a feature branch and stream changed files through VS Code"),
