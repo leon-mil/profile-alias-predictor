@@ -377,7 +377,13 @@ public sealed class ProfileAliasPredictor : ICommandPredictor
                 new(
                     "predtest",
                     "Verify the PowerShell profile and predictor configuration"),
+                new(
+                    "vdi-profile-deploy",
+                    "Deploy the PowerShell profile and ProfileAliasPredictor to VDI"),
 
+                new(
+                    "vdi-profile-deploy -WhatIf",
+                    "Preview the PowerShell profile and ProfileAliasPredictor deployment to VDI"),
 
                 // =============================================================
                 // Production
