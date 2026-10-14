@@ -135,6 +135,59 @@ public sealed class ProfileAliasPredictor : ICommandPredictor
                 "cprs-test-deploy -Folder <folder> -SkipBuild -Message \"<message>\" -WhatIf",
                 "Preview the existing Release build to a custom TEST folder"),
 
+            
+            // =================================================================
+            // CPRS client TEST deployment - Validation and rollback testing
+            // =================================================================
+
+            new(
+                "cprs-test-deploy -TestMode -Folder <folder> -Message \"<message>\"",
+                "Build and deploy in isolated TEST validation mode"),
+
+            new(
+                "cprs-test-deploy -TestMode -Folder <folder> -SkipBuild -Message \"<message>\"",
+                "Validate deployment using the existing Release build"),
+
+            new(
+                "cprs-test-deploy -TestMode -Folder <folder> -Message \"<message>\" -WhatIf",
+                "Preview an isolated TEST validation deployment"),
+
+            new(
+                "cprs-test-deploy -TestMode -Folder <folder> -SkipBuild -Message \"<message>\" -WhatIf",
+                "Preview validation deployment without rebuilding"),
+
+            new(
+                "cprs-test-deploy -TestMode -Folder <folder> -Message \"<message>\" -ValidationFailurePoint AfterArchive",
+                "Simulate deployment failure after archiving to test rollback"),
+
+            new(
+                "cprs-test-deploy -TestMode -Folder <folder> -SkipBuild -Message \"<message>\" -ValidationFailurePoint AfterArchive",
+                "Test rollback after archive using the existing build"),
+
+            new(
+                "cprs-test-deploy -TestMode -Folder <folder> -Message \"<message>\" -ValidationFailurePoint AfterActivation",
+                "Simulate deployment failure after activation to test rollback"),
+
+            new(
+                "cprs-test-deploy -TestMode -Folder <folder> -SkipBuild -Message \"<message>\" -ValidationFailurePoint AfterActivation",
+                "Test rollback after activation using the existing build"),
+
+            new(
+                "cprs-test-deploy -TestMode -Folder <folder> -SkipBuild -Message \"<message>\" -ValidationFailurePoint AfterArchive -ThrowOnFailure",
+                "Test archive rollback and propagate deployment failures"),
+
+            new(
+                "cprs-test-deploy -TestMode -Folder <folder> -SkipBuild -Message \"<message>\" -ValidationFailurePoint AfterActivation -ThrowOnFailure",
+                "Test activation rollback and propagate deployment failures"),
+
+            new(
+                "cprs-test-deploy -SkipBuild -Folder <folder> -TestMode -Message \"<message>\"",
+                "Deploy the existing build to a custom folder in test mode"),
+
+            new(
+                "cprs-test-deploy -Folder <folder> -TestMode -Message \"<message>\"",
+                "Build and deploy in test mode to a custom folder"),
+
 
             // =================================================================
             // CPRS client production deployment
@@ -417,7 +470,7 @@ public sealed class ProfileAliasPredictor : ICommandPredictor
                 new(
                     "gfile",
                     "Show staged, unstaged, and untracked Git files"),
-                                new(
+                new(
                     "branchfind <branch>",
                     "Search for a branch across all CPRS repositories"),
 
